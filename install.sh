@@ -33,17 +33,6 @@ kubectl apply -Rf k8s
 APP_IP=$(kubectl get nodes -o wide | grep -i tiko | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}')
 sed "s/REDIS_MASTER_SERVICE_HOST:DB_PORT/$APP_IP:30000/g" go-rest/db.go.template > go-rest/db.go
 cd go-rest && go build 
-
-#Examples : 
-
-#echo "posting My name"
-#
-#curl -H "Content-Type: application/json" -d '{
-#        "name": "Luigi",
-#	"surname": "Molinaro"
-#	}' http://localhost:8080/posts
-#
-#echo "getting my name"
-#curl http://localhost:8080/posts | jq
+cd go-rest && ./go-rest
 
 set -
