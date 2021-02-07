@@ -15,7 +15,7 @@ var (
 )
 
 func RedisConnect() redis.Conn {
-	c, err := redis.Dial("tcp", "172.18.0.2:30000")
+	c, err := redis.Dial("tcp", "redis-master:6379")
 	HandleError(err)
 	return c
 }

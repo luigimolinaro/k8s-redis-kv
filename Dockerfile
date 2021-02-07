@@ -17,6 +17,5 @@ RUN go get github.com/garyburd/redigo/redis
 
 ADD go-rest /opt/go-rest/
 WORKDIR /opt/go-rest/
-RUN ls /opt/go-rest/
 #RUN go build
 CMD /opt/go-rest/go-rest
