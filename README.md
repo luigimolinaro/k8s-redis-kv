@@ -10,6 +10,12 @@ This bash script install
 * Run the "web service" on port 30080 (install.sh echo the right IP)
 * Install Graphana and Prometheus
 
+###
+
+You can also use "go" program stand-alone.
+To do so, i have created "NodePort" also for redis-master in order to connect from host
+
+
 ## Next step 
 
 * Makes some security check
