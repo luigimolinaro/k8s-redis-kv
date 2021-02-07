@@ -20,27 +20,6 @@ func RedisConnect() redis.Conn {
 	return c
 }
 
-// init seeds some ridiculous initial data
-func init() {
-	CreatePost(Post{
-		User: User{
-			Username: "pieohpah",
-			Email:    "jo.chasinga@gmail.com",
-		},
-		Topic: "My First Post",
-		Text:  "Hello everyone! This is awesome.",
-	})
-
-	CreatePost(Post{
-		User: User{
-			Username: "IronMan",
-			Email:    "iron_mann@hotmale.com",
-		},
-		Topic: "Greeting",
-		Text:  "Greetings from Ironman",
-	})
-}
-
 func FindAll() Posts {
 
 	c := RedisConnect()
@@ -81,7 +60,6 @@ func FindPost(id int) Post {
 	return post
 }
 
-// CreatePost creates a blog post.
 func CreatePost(p Post) {
 	currentPostID++
 	currentUserID++
@@ -103,7 +81,6 @@ func CreatePost(p Post) {
 	fmt.Println("GET ", reply)
 }
 
-// DeletePost deletes a blog post.
 func DeletePost(id int) {
 
 	c := RedisConnect()
