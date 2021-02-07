@@ -8,6 +8,7 @@ This bash script install
 * Kubernetes with kind
 * Build the "web services written in go"
 * Run the "web service" on port 8080
+* Install Graphana and Prometheus
 
 
   -------------------
