@@ -1,7 +1,7 @@
 #!/bin/bash
 #Install local kubernetes using kind https://kind.sigs.k8s.io/
 
-#set -x
+set -x
 
 #check id root
 if [[ $(id -u) -ne 0 ]] ; then echo "Please run as root" ; exit 1 ; fi
@@ -35,6 +35,5 @@ sed "s/REDIS_MASTER_SERVICE_HOST:DB_PORT/$APP_IP:30000/g" go-rest/db.go.template
 cd go-rest && go build 
 echo "web services is started on 127.0.1:8080, prescc ctrl-C to stop"
 ./go-rest
-
 
 set -
